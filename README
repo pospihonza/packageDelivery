@@ -1,0 +1,28 @@
+Application PackageDelivery
+---------------------------
+
+A Command-line program that keeps a record of packages processed.
+
+Usage: PackageDelivery [<file-with-initial-packages>]
+
+Examples: PackageDelivery
+          PackageDelivery c:\test\initpckg.txt
+
+where input:
+   - record is each line in console or in file
+   - line is: <weight-of-package-real-number> <destination-postal-code-5-digits>
+
+and output:
+   - is written to console every one minute
+   - each line: <postal-code> <sum-of-weight-of-packages-for-respective-postal-code>
+   - lines are sorted by sum-of-weight in descending order
+
+quit the program:
+   - type "quit" on the console
+
+Program checks for these error cases:
+   - file from the argument does not exist, the program stops
+   - weight on the input line is not a real number, the line skipped
+   - postal code is not a 5-digit number, the line skipped
+   - line does not consist of exactly 2 values separated by space, the line skipped
+   - concurrence of multiple errors is not treated, shown only first detected one
